@@ -5,3 +5,34 @@
  */
 
 include_once 'lullablog.features.inc';
+
+/**
+ * Implement hook_init().
+ */
+function lullablog_init() {
+    // Add the CSS for this feature
+    drupal_add_css(drupal_get_path('module', 'lullablog'). '/lullablog.css');
+}
+
+/**
+ * Implements hook_permission()
+ */
+function lullablog_permission(){
+    return array(
+      'administer lullablog status' => array(
+        'title' => t('Administer blog post status')
+      )
+      );
+}
+/**
+ * implements hook_form_FORM_ID_alter().
+ */
+function lullablog_form_lullablog_post_node_form_alter(&$form, &$form_state, $form_id) {
+//    var_dump(&$form['options']['#group']);
+    
+   unset($form['options']['#group']);
+    if (user_access('administer lullablog status')) {
+        $form['options']['#access'] = TRUE;
+    }
+ 
+}
