@@ -31,5 +31,9 @@ features[variable][] = menu_parent_lullablog_post
 features[variable][] = node_options_lullablog_post
 features[variable][] = node_preview_lullablog_post
 features[variable][] = node_submitted_lullablog_post
+<<<<<<< HEAD
+=======
+features[variable][] = site_frontpage
+>>>>>>> 35de47e5c686f6c6ca0548bac0cd103faf9a1b9d
 features[views_view][] = lullablog
 features_exclude[dependencies][ctools] = ctools
